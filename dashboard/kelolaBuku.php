@@ -91,29 +91,32 @@ if ($result && $result->num_rows > 0) {
 </head>
 
 <body>
-    <h2>Buku - Buku </h2>
 
-    <?php if (isset($_SESSION['user']) && $_SESSION['user']['role'] === 'admin'): ?>
-        <div class="admin-actions">
-            <a href="tambahBuku.php" class="add-book-btn">
-                <i class="fas fa-plus"></i> Tambah Buku Baru
-            </a>
-        </div>
-    <?php endif; ?>
-
-    <div id="search-container">
-        <input type="text" id="search-input" placeholder="Cari judul buku...">
-        <i class="fas fa-search search-icon"></i>
+    <div class="header-container">
+        <h1 class="header-title-centered">Buku - Buku</h1>
+        <a href="index.php" class="kembali-btn-top">
+            Kembali ke Beranda <i class="fas fa-arrow-right"></i>
+        </a>
     </div>
 
-    <div class="controls">
-        <button id="view-grid" class="active"><i class="fas fa-th"></i> Grid</button>
-        <button id="view-list"><i class="fas fa-list"></i> List</button>
-        <select id="sort-books">
-            <option value="default">Urutan Default</option>
-            <option value="asc">A-Z</option>
-            <option value="desc">Z-A</option>
-        </select>
+    <div class="top-controls-wrapper">
+        <div id="search-container">
+            <input type="text" id="search-input" placeholder="Cari judul buku...">
+            <i class="fas fa-search search-icon"></i>
+        </div>
+
+        <div class="controls-and-actions">
+
+            <div class="controls">
+                <button id="view-grid" class="active"><i class="fas fa-th"></i> Grid</button>
+                <button id="view-list"><i class="fas fa-list"></i> List</button>
+                <select id="sort-books">
+                    <option value="default">Urutan Default</option>
+                    <option value="asc">A-Z</option>
+                    <option value="desc">Z-A</option>
+                </select>
+            </div>
+        </div>
     </div>
 
     <div class="gallery" id="gallery">
@@ -186,7 +189,6 @@ if ($result && $result->num_rows > 0) {
         </div>
     </div>
 
-    <a href="index.php" class="kembali-btn"><i class="fas fa-arrow-left"></i> Kembali ke Beranda</a>
 </body>
 
 </html>

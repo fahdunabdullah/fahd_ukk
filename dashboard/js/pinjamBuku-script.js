@@ -1,25 +1,33 @@
 function validateDates() {
-    var tanggalPinjam = document.getElementById('tanggal_pinjam').value;
-    var tanggalKembali = document.getElementById('tanggal_kembali').value;
-
-    if (tanggalPinjam >= tanggalKembali) {
-        alert('Tanggal kembali harus setelah tanggal pinjam!');
+    var tanggalPinjam = new Date(document.querySelector('input[name="tanggal_pinjam"]').value);
+    var tanggalKembali = new Date(document.querySelector('input[name="tanggal_kembali"]').value);
+    
+    if (tanggalKembali <= tanggalPinjam) {
+        alert("Tanggal kembali harus setelah tanggal pinjam!");
         return false;
     }
+    
     return true;
 }
 
 function updateReturnDate() {
-    var tanggalPinjam = document.getElementById('tanggal_pinjam').value;
-    if (tanggalPinjam) {
-        var date = new Date(tanggalPinjam);
-        date.setDate(date.getDate() + 7);
-
-        var yyyy = date.getFullYear();
-        var mm = String(date.getMonth() + 1).padStart(2, '0');
-        var dd = String(date.getDate()).padStart(2, '0');
-
-        document.getElementById('tanggal_kembali').value = yyyy + '-' + mm + '-' + dd;
-        document.getElementById('tanggal_kembali').min = tanggalPinjam;
+    var tanggalPinjamInput = document.querySelector('input[name="tanggal_pinjam"]');
+    var tanggalKembaliInput = document.getElementById('tanggal_kembali');
+    
+    if (tanggalPinjamInput.value) {
+        var tanggalPinjam = new Date(tanggalPinjamInput.value);
+        var tanggalKembali = new Date(tanggalPinjam);
+        tanggalKembali.setDate(tanggalPinjam.getDate() + 7);
+        
+        var year = tanggalKembali.getFullYear();
+        var month = String(tanggalKembali.getMonth() + 1).padStart(2, '0');
+        var day = String(tanggalKembali.getDate()).padStart(2, '0');
+        
+        tanggalKembaliInput.value = `${year}-${month}-${day}`;
     }
 }
+
+// Execute when page loads
+document.addEventListener('DOMContentLoaded', function() {
+    updateReturnDate();
+});

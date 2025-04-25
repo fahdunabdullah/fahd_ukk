@@ -97,51 +97,6 @@ a:hover {
     font-size: 1.2em;
 }
 
-#search-container {
-    margin-bottom: 20px;
-    position: relative;
-    max-width: 400px;
-    margin: 0 auto 20px;
-}
-
-#search-input {
-    width: 100%;
-    padding: 10px 40px 10px 15px;
-    border-radius: 25px;
-    border: 1px solid #ddd;
-    font-size: 16px;
-}
-
-.search-icon {
-    position: absolute;
-    right: 15px;
-    top: 50%;
-    transform: translateY(-50%);
-    color: #777;
-}
-
-.controls {
-    display: flex;
-    justify-content: center;
-    margin-bottom: 20px;
-    gap: 10px;
-    flex-wrap: wrap;
-}
-
-.controls button {
-    padding: 8px 15px;
-    background-color: #f5f5f5;
-    border: 1px solid #ddd;
-    border-radius: 5px;
-    cursor: pointer;
-}
-
-.controls button.active {
-    background-color: #007bff;
-    color: white;
-    border-color: #007bff;
-}
-
 #sort-books {
     padding: 8px;
     border-radius: 5px;
@@ -271,7 +226,6 @@ a:hover {
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
 }
 
-/* Tambahan CSS untuk detail buku */
 .book-details {
     margin: 15px 0;
     text-align: left;
@@ -306,32 +260,6 @@ a:hover {
     }
 }
 
-
-.admin-actions {
-    display: flex;
-    justify-content: flex-end;
-    margin-bottom: 15px;
-}
-
-.add-book-btn {
-    background-color: #4CAF50;
-    color: white;
-    padding: 8px 16px;
-    border: none;
-    border-radius: 4px;
-    text-decoration: none;
-    font-size: 14px;
-    display: inline-flex;
-    align-items: center;
-    gap: 5px;
-    transition: background-color 0.3s;
-}
-
-.add-book-btn:hover {
-    background-color: #45a049;
-}
-
-/* Form styles for tambahBuku.php */
 .form-container {
     max-width: 600px;
     margin: 20px auto;
@@ -411,29 +339,6 @@ input[type="file"] {
     color: #721c24;
 }
 
-.admin-actions {
-    display: flex;
-    justify-content: flex-end;
-    margin-bottom: 15px;
-}
-
-.add-book-btn {
-    background-color: #4CAF50;
-    color: white;
-    padding: 8px 16px;
-    border: none;
-    border-radius: 4px;
-    text-decoration: none;
-    font-size: 14px;
-    display: inline-flex;
-    align-items: center;
-    gap: 5px;
-}
-
-.add-book-btn:hover {
-    background-color: #45a049;
-}
-
 .book-info {
     margin: 5px 0;
     font-size: 0.85em;
@@ -495,4 +400,84 @@ input[type="file"] {
 
 .close-modal:hover {
     color: #e74c3c;
+}
+
+.header-container {
+    position: relative;
+    margin-bottom: 20px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.header-title-centered {
+    text-align: center;
+    font-size: 30px;
+    font-weight: bold;
+    margin: 15px 0;
+}
+
+.kembali-btn-top {
+    position: absolute;
+    right: 0;
+    top: 50%;
+    transform: translateY(-50%);
+    background-color: green;
+    color: white;
+    padding: 10px 15px;
+    text-decoration: none;
+    border-radius: 5px;
+    display: inline-flex;
+    align-items: center;
+    gap: 5px;
+    transition: background-color 0.3s;
+}
+
+.kembali-btn-top:hover {
+    background-color: #55cf79;
+}
+
+.controls {
+    display: flex;
+    justify-content: center;
+    margin-top: 20px;
+    gap: 10px;
+    flex-wrap: wrap;
+}
+
+.controls button {
+    padding: 8px 15px;
+    background-color: #f5f5f5;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.controls button.active {
+    background-color: #007bff;
+    color: white;
+    border-color: #007bff;
+}
+
+#search-container {
+    position: relative;
+    width: 100%;
+    max-width: 600px;
+    margin: 0 auto;
+}
+
+#search-input {
+    width: 100%;
+    padding: 10px 40px 10px 15px;
+    border-radius: 20px;
+    border: 1px solid #ddd;
+    font-size: 16px;
+}
+
+.search-icon {
+    position: absolute;
+    right: 15px;
+    top: 50%;
+    transform: translateY(-50%);
+    color: #777;
 }

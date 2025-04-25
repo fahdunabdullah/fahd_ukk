@@ -22,15 +22,13 @@ while ($row = $result->fetch_assoc()) {
 </head>
 
 <body>
-    <h2>Buku - Buku </h2>
+<h1 class="header-title-centered">Buku - Buku</h1>
 
-    <?php if (isset($_SESSION['admin']) && $_SESSION['admin'] === true): ?>
-        <div class="admin-actions">
-            <a href="tambahBuku.php" class="add-book-btn">
-                <i class="fas fa-plus"></i> Tambah Buku Baru
-            </a>
-        </div>
-    <?php endif; ?>
+<div class="header-container">
+    <a href="index.php" class="kembali-btn-top">
+         Kembali ke Beranda<i class="fas fa-arrow-right"></i>
+    </a>
+</div>
 
     <div id="search-container">
         <input type="text" id="search-input" placeholder="Cari judul buku...">
@@ -91,8 +89,6 @@ while ($row = $result->fetch_assoc()) {
             </div>
         </div>
     </div>
-
-    <a href="index.php" class="kembali-btn"><i class="fas fa-arrow-left"></i> Kembali ke Beranda</a>
 </body>
 
 </html>

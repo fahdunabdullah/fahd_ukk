@@ -9,6 +9,18 @@ if (isset($_POST['submit'])) {
     $tanggal_kembali = $_POST['tanggal_kembali'];
     $status = 0; 
 
+    // Cek apakah user sudah meminjam buku ini dan belum mengembalikannya
+    $check_query = "SELECT * FROM peminjaman_buku WHERE book_id = ? AND user_id = ? AND status = 0";
+    $check_stmt = $koneksi->prepare($check_query);
+    $check_stmt->bind_param("ii", $book_id, $user_id);
+    $check_stmt->execute();
+    $check_result = $check_stmt->get_result();
+    
+    if ($check_result->num_rows > 0) {
+        echo "<script>alert('Anda sudah meminjam buku ini dan belum mengembalikannya. Harap kembalikan buku sebelum meminjam lagi.'); window.history.back();</script>";
+        exit();
+    }
+
     if (strtotime($tanggal_kembali) <= strtotime($tanggal_pinjam)) {
         echo "<script>alert('Tanggal kembali harus setelah tanggal pinjam!'); window.history.back();</script>";
         exit();

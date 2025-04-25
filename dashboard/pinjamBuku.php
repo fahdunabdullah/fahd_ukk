@@ -35,13 +35,13 @@
                     <div class="form-group">
                         <label for="tanggal_pinjam">Tanggal Pinjam:</label>
                         <input type="date" name="tanggal_pinjam" value="<?php echo date('Y-m-d'); ?>"
-                         min="<?php echo date('Y-m-d'); ?>" onchange="updateReturnDate()" required>
+                         onchange="updateReturnDate()" required>
                     </div>
 
                     <div class="form-group">
                         <label for="tanggal_kembali">Tanggal Kembali:</label>
                         <input type="date" id="tanggal_kembali" name="tanggal_kembali" value="<?php echo date('Y-m-d', strtotime('+7 days')); ?>"
-                        min="<?php echo date('Y-m-d', strtotime('+1 day')); ?>" required>
+                        required>
                     </div>
 
                     <div class="info-box">
@@ -71,4 +71,3 @@
 </body>
 
 </html>
-
