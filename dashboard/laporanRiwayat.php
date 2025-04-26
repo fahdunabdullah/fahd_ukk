@@ -58,11 +58,49 @@ if ($jenis_laporan === 'populer') {
     <title>Laporan</title>
     <link rel="stylesheet" href="css/laporanRiwayat.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <style>
+        .top-nav {
+            position: relative;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            padding: 10px 20px;
+            background-color: #f8f9fa;
+            border-bottom: 1px solid #ddd;
+        }
+
+     
+
+        .back-link {
+            position: absolute;
+            right: 20px;
+            top: 50%;
+            transform: translateY(-50%);
+            display: inline-flex;
+            align-items: center;
+            padding: 8px 15px;
+            background-color: green;
+            color: white;
+            text-decoration: none;
+            border-radius: 4px;
+            font-weight: 500;
+            transition: background-color 0.2s;
+            gap: 10px;
+        }
+
+        .back-link:hover {
+            background-color: #55cf79;
+        }
+    </style>
 </head>
 
 <body>
-    <div class="header-container">
+    <div class="top-nav">
         <h2 class="report-title">Laporan dan Riwayat</h2>
+        <a href="index.php" class="back-link">
+            Kembali ke Panel Admin
+            <i class="fas fa-arrow-right"></i>
+        </a>
     </div>
 
     <div class="laporan-select">
@@ -111,7 +149,7 @@ if ($jenis_laporan === 'populer') {
                 </a>
             </div>
         </div>
-        
+
         <?php if ($result->num_rows > 0): ?>
             <table>
                 <thead>
@@ -167,7 +205,7 @@ if ($jenis_laporan === 'populer') {
                 </a>
             </div>
         </div>
-        
+
         <?php if ($result_populer->num_rows > 0): ?>
             <table>
                 <thead>
@@ -195,12 +233,6 @@ if ($jenis_laporan === 'populer') {
         <?php endif; ?>
     <?php endif; ?>
 
-    <footer class="footer-nav">
-        <a href="index.php" class="back-link">
-            <i class="fas fa-arrow-left"></i>
-            Kembali ke Panel Admin
-        </a>
-    </footer>
     <script src="js/laporanRiwayat-script.js"></script>
 </body>
 
